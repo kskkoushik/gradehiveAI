@@ -31,7 +31,7 @@ function App() {
             const content = await fetch(file.download_url).then(res => res.text());
             const analysis = await geminiService.analyzeCode(content, file.name.split('.').pop() || '');
             
-            // Parse analysis into structured data
+            // Parse analysis into structured data using AI
             const sections = analysis.split('\n\n');
             return {
               path: file.path,
